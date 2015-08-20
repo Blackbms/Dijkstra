@@ -5,7 +5,7 @@ import scala.collection.mutable.ListBuffer
  */
 object main extends App {
   
-  var network = List(
+  val network = List(
     Map("startLocation" -> "Kruthika's abode", "endLocation" -> "Mark's crib", "distance" -> 9),
     Map("startLocation" -> "Kruthika's abode", "endLocation" -> "Greg's casa", "distance" -> 4),
     Map("startLocation" -> "Kruthika's abode", "endLocation" -> "Matt's pad", "distance" -> 18),
