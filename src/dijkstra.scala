@@ -80,6 +80,15 @@ object dijkstra {
     return valid
   }
   
+  def ValidateMapConsistance(network : List[Map[String,Any]]) : Boolean = {
+    var valid = true
+    
+    network.foreach { n => 
+      if (network.filter(_("startLocation") == n("startLocation")).filter(_("endLocation") == n("endLocation")).length > 1) valid = false
+      
+    }
+    return valid
+  }
   //***********************************************************************
   //
   // Function: getMinDistIdx
@@ -141,6 +150,12 @@ object dijkstra {
       // If there are distances that are not valid then bail out
       println("Network Map contains distances that are either negative or zero")
       return -3
+    }
+    
+    if (ValidateMapConsistance(network) == false) {
+      // If map isn't consistant then bail out.
+      println("Network not consistant multiple paths between some nodes")
+      return -4
     }
     
     var nodemap : List[Map[String,Any]] = Nil

@@ -5,7 +5,7 @@ import scala.collection.mutable.ListBuffer
  */
 object main extends App {
   
-  val network = List(
+  var network = List(
     Map("startLocation" -> "Kruthika's abode", "endLocation" -> "Mark's crib", "distance" -> 9),
     Map("startLocation" -> "Kruthika's abode", "endLocation" -> "Greg's casa", "distance" -> 4),
     Map("startLocation" -> "Kruthika's abode", "endLocation" -> "Matt's pad", "distance" -> 18),
@@ -30,6 +30,7 @@ object main extends App {
     Map("startLocation" -> "Cam's dwelling", "endLocation" -> "Craig's haunt", "distance" -> 18),
     Map("startLocation" -> "Nathan's flat", "endLocation" -> "Kirk's farm", "distance" -> 3)
     
+    
   )
 
   dijkstra.dijkstra(network,"Kruthika's abode","Craig's haunt")
@@ -37,3 +38,8 @@ object main extends App {
   //dijkstra.dijkstra(network,"Kruthika's abode","Amethyst's Studio")
 
 }
+
+
+
+
+
