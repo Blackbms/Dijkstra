@@ -68,6 +68,17 @@ object dijkstra {
     }
     valid
   }  // END: ValidateKeys
+  //***********************************************************************
+  // Utility function to validate input map for valid distances
+  //***********************************************************************
+  def ValidateDistance(network : List[Map[String,Any]]) : Boolean = {
+    var valid = true
+    
+    if ( network.filter(_("distance").asInstanceOf[Integer] <= 0).length > 0){
+      valid = false
+    }
+    return valid
+  }
   
   //***********************************************************************
   //
@@ -124,6 +135,12 @@ object dijkstra {
       // If we don't a good network map then just bail out.
       println("Network Map contains bad key(s)")
       return -1
+    }
+    
+    if (ValidateDistance(network) == false) {
+      // If there are distances that are not valid then bail out
+      println("Network Map contains distances that are either negative or zero")
+      return -3
     }
     
     var nodemap : List[Map[String,Any]] = Nil
