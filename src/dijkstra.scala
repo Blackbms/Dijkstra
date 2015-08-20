@@ -79,8 +79,11 @@ object dijkstra {
     }
     return valid
   }
-  
-  def ValidateMapConsistance(network : List[Map[String,Any]]) : Boolean = {
+  //***********************************************************************
+  // Utility function to validate input map for consistancy
+  // There should be no more than 1 path between a start/end combination
+  //***********************************************************************
+  def ValidateMapConsistency(network : List[Map[String,Any]]) : Boolean = {
     var valid = true
     
     network.foreach { n => 
@@ -152,7 +155,7 @@ object dijkstra {
       return -3
     }
     
-    if (ValidateMapConsistance(network) == false) {
+    if (ValidateMapConsistency(network) == false) {
       // If map isn't consistant then bail out.
       println("Network not consistant multiple paths between some nodes")
       return -4
