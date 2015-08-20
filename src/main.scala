@@ -30,6 +30,7 @@ object main extends App {
     Map("startLocation" -> "Cam's dwelling", "endLocation" -> "Craig's haunt", "distance" -> 18),
     Map("startLocation" -> "Nathan's flat", "endLocation" -> "Kirk's farm", "distance" -> 3)
     
+    
   )
 
   dijkstra.dijkstra(network,"Kruthika's abode","Craig's haunt")
@@ -37,3 +38,8 @@ object main extends App {
   //dijkstra.dijkstra(network,"Kruthika's abode","Amethyst's Studio")
 
 }
+
+
+
+
+

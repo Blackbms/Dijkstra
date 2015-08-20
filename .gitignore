@@ -1,6 +1,7 @@
 .cache-main
+*.class
 .classpath
 .project
 .settings
-*.zip
+.zip
 bin/
